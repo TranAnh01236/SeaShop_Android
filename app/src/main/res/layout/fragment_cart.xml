@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.cart.CartFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/custom_panel_multi_color">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_search"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_panel_2"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/ic_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:background="@color/trans"
+                android:layout_alignParentLeft="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ic_search"
+                android:text="@string/product_name_category"
+                android:textSize="14dp"
+                android:background="@drawable/custom_edittext_1"
+                android:textColor="@color/dark_gray"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout_1"
+        android:background="@drawable/custom_border_with_shadow_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giỏ hàng của bạn"
+            android:textSize="16dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_layout_1"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/cart"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa có sản phẩm nào trong giỏ hàng"
+            android:textColor="@color/primaryColor_2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/relative_layout_2"/>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_panel_multi_color_3"
+            android:layout_below="@id/tv_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiếp tục mua hàng"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vẫn còn 10.000+ sản phẩm đang chờ bạn"
+            android:layout_below="@id/relative_layout_category"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/tv_2">
+
+            <TextView
+                android:id="@+id/tv_view_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xem tất cả"
+                android:textColor="@color/primaryColor_2"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view_category"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/relative_layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_second"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_layout_1"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_already"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hàng có sẵn"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="true"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view_product"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/tv_already"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            android:layout_below="@id/recycle_view_product"
+            android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/view_1"
+            android:layout_marginTop="15dp">
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_delete_all_cart"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/bg_lightgray_corner_10"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/img_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_trash_can"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/trans"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xóa hết giỏ hàng"
+                    android:layout_toRightOf="@id/img_1"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_product"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/relative_layout_delete_all_cart"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_lightgray_corner_10"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/img_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_shopping_cart"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/trans"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tiếp tục mua sắm"
+                    android:layout_toRightOf="@id/img_2"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/light_gray"
+            android:layout_below="@id/relative_layout_btn"
+            android:layout_marginTop="15dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:id="@+id/tv_total_price_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng tiền:"
+                android:textColor="@color/primaryColor_2"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_total_price_1"
+                android:text="18.000 vnđ"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_button_cart"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/custom_btn_addcart_hightlight"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:id="@+id/tv_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đặt hàng"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
